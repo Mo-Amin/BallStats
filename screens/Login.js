@@ -24,7 +24,7 @@ import GLOBAL from "../Global";
 import * as Google from "expo-google-app-auth";
 
 const IOS_CLIENT_ID =
-  "244646029044-peak2tbttnp64bf60for60d28bhtsklm.apps.googleusercontent.com";
+  "837272527093-nibum0nbcp9k9n7bnaf0f5egcsrqd7fb.apps.googleusercontent.com";
 class Loginscreen extends Component {
   state = {
     email: "",
@@ -110,7 +110,7 @@ class Loginscreen extends Component {
             <View style={styles.inner}>
               <Text style={styles.textcolor}>MoStats</Text>
               <TextInput
-                placeholder="Phone number, username, or email"
+                placeholder="Username or email"
                 placeholderTextColor="grey"
                 style={styles.input}
                 onChangeText={(email) => this.setState({ email })}

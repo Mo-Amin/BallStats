@@ -115,13 +115,13 @@ export default class AccountScreen extends Component {
           <SafeAreaView style={{ margin: "8%" }}>
             <Text
               style={{
-                color: "red",
-                fontFamily: "GillSans-UltraBold",
+                color: "black",
+                fontFamily: "Verdana-BoldItalic",
                 fontSize: 50,
                 alignSelf: "center",
               }}
             >
-              LocalBiz
+              MoStats
             </Text>
           </SafeAreaView>
 
@@ -134,7 +134,7 @@ export default class AccountScreen extends Component {
             <TextInput
               style={styles.Full_name_input}
               placeholder="Full name"
-              placeholderTextColor="red"
+              placeholderTextColor="gray"
               onChangeText={(Full_Name) => this.setState({ Full_Name })}
               value={this.state.Full_Name}
             />
@@ -142,7 +142,7 @@ export default class AccountScreen extends Component {
             <TextInput
               style={styles.username_input}
               placeholder="Username"
-              placeholderTextColor="red"
+              placeholderTextColor="gray"
               onChangeText={(name) => this.setState({ name })}
               value={this.state.name}
             />
@@ -150,7 +150,7 @@ export default class AccountScreen extends Component {
             <TextInput
               style={styles.phone_number}
               placeholder="Phone number"
-              placeholderTextColor="red"
+              placeholderTextColor="gray"
               keyboardType={"phone-pad"}
               onChangeText={(phonenumber) => this.setState({ phonenumber })}
               value={this.state.phonenumber}
@@ -160,7 +160,7 @@ export default class AccountScreen extends Component {
             <TextInput
               style={styles.email_input}
               placeholder="Email"
-              placeholderTextColor="red"
+              placeholderTextColor="gray"
               onChangeText={(email) => this.setState({ email })}
               value={this.state.email}
             />
@@ -169,7 +169,7 @@ export default class AccountScreen extends Component {
               style={styles.password_input}
               secureTextEntry
               placeholder="Password"
-              placeholderTextColor="red"
+              placeholderTextColor="gray"
               onChangeText={(Password) => this.setState({ Password })}
               value={this.state.Password}
             />
@@ -182,7 +182,7 @@ export default class AccountScreen extends Component {
               <Text
                 style={{
                   color: "white",
-                  fontFamily: "GillSans-SemiBold",
+                  fontFamily: "Verdana-BoldItalic",
                   fontSize: 28,
                 }}
               >
@@ -250,7 +250,7 @@ export default class AccountScreen extends Component {
             <Text
               style={{
                 color: "gray",
-                fontFamily: "GillSans-SemiBold",
+                fontFamily: "Verdana-BoldItalic",
                 fontSize: 20,
                 alignSelf: "center",
               }}
@@ -266,6 +266,7 @@ export default class AccountScreen extends Component {
                   paddingTop: 8,
                   color: "red",
                   fontFamily: "GillSans-SemiBold",
+                  textDecorationLine: 'underline',
                   fontSize: 20,
                   alignSelf: "center",
                   margin: 6,
@@ -329,28 +330,28 @@ const styles = StyleSheet.create({
   username_input: {
     borderBottomWidth: 2,
     opacity: 0.4,
-    borderBottomColor: "red",
+    borderBottomColor: "black",
     padding: 3,
     margin: 10,
     width: 288,
     backgroundColor: "white",
     fontFamily: "GillSans-SemiBold",
     fontSize: 20,
-    color: "red",
+    color: "black",
     //position: "absolute",
     //top: "40%",
   },
   email_input: {
     borderBottomWidth: 2,
     opacity: 0.4,
-    borderBottomColor: "red",
+    borderBottomColor: "black",
     padding: 3,
     margin: 10,
     width: 288,
     backgroundColor: "white",
     fontFamily: "GillSans-SemiBold",
     fontSize: 20,
-    color: "red",
+    color: "black",
     //position: "absolute",
     //top: "48%",
   },
@@ -358,27 +359,27 @@ const styles = StyleSheet.create({
   password_input: {
     borderBottomWidth: 2,
     opacity: 0.4,
-    borderBottomColor: "red",
+    borderBottomColor: "black",
     padding: 3,
     margin: 10,
     width: 288,
     backgroundColor: "white",
     fontFamily: "GillSans-SemiBold",
     fontSize: 20,
-    color: "red",
+    color: "black",
     //top: "64%",
   },
   Full_name_input: {
     borderBottomWidth: 2,
     opacity: 0.4,
-    borderBottomColor: "red",
+    borderBottomColor: "black",
     padding: 3,
     margin: 10,
     width: 288,
     backgroundColor: "white",
     fontFamily: "GillSans-SemiBold",
     fontSize: 20,
-    color: "red",
+    color: "black",
     // position: "absolute",
     //top: "32%",
     // left: "14%",
@@ -387,20 +388,20 @@ const styles = StyleSheet.create({
   phone_number: {
     borderBottomWidth: 2,
     opacity: 0.4,
-    borderBottomColor: "red",
+    borderBottomColor: "black",
     padding: 3,
     margin: 10,
     width: 288,
     backgroundColor: "white",
     fontFamily: "GillSans-SemiBold",
     fontSize: 20,
-    color: "red",
+    color: "black",
     //position: "absolute",
     //top: "56%",
   },
 
   button: {
-    backgroundColor: "red",
+    backgroundColor: "black",
     borderRadius: 10,
     height: 54,
     width: 288,

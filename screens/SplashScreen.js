@@ -18,7 +18,7 @@ export default class HomeScreen extends Component {
     setTimeout(() => {
       // Add your logic for the transition
       this.props.navigation.navigate("Login");
-    }, 8000);
+    }, 800);
   }
 
   render() {

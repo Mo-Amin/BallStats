@@ -60,7 +60,7 @@ const AuthStack = createStackNavigator({
   Account: {
     screen: Account,
     navigationOptions: {
-      headerShown: false,
+      headerShown: true,
       gestureEnabled: false,
     },
   },
