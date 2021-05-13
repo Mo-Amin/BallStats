@@ -104,21 +104,21 @@ class Loginscreen extends Component {
 
   render() {
     return (
-      <KeyboardAwareScrollView style={{ flex: 1, backgroundColor: "#6CC6E1" }}>
+      <KeyboardAwareScrollView style={{ flex: 1, backgroundColor: "white" }}>
         <SafeAreaView style={styles.container}>
           <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
             <View style={styles.inner}>
-              <Text style={styles.textcolor}>Spool</Text>
+              <Text style={styles.textcolor}>MoStats</Text>
               <TextInput
                 placeholder="Phone number, username, or email"
-                placeholderTextColor="#6CC6E1"
+                placeholderTextColor="grey"
                 style={styles.input}
                 onChangeText={(email) => this.setState({ email })}
                 value={this.state.email}
               />
               <TextInput
                 placeholder="Password"
-                placeholderTextColor="#6CC6E1"
+                placeholderTextColor="grey"
                 style={styles.input}
                 onChangeText={(Password) => this.setState({ Password })}
                 value={this.state.Password}
@@ -143,7 +143,7 @@ class Loginscreen extends Component {
                 <Text
                   style={{
                     color: "white",
-                    fontFamily: "GillSans-SemiBold",
+                    fontFamily: "Verdana-BoldItalic",
                     fontSize: 25,
                   }}
                 >
@@ -170,7 +170,7 @@ class Loginscreen extends Component {
                     style={{
                       color: "blue",
                       alignSelf: "center",
-                      fontFamily: "GillSans-SemiBold",
+                      fontFamily: "Verdana-BoldItalic",
                     }}
                   >
                     Log in with Facebook
@@ -199,7 +199,7 @@ class Loginscreen extends Component {
                     style={{
                       color: "red",
                       alignSelf: "center",
-                      fontFamily: "GillSans-SemiBold",
+                      fontFamily: "Verdana-BoldItalic",
                     }}
                   >
                     Log in with Google
@@ -216,7 +216,7 @@ class Loginscreen extends Component {
                 <Text
                   style={{
                     color: "gray",
-                    fontFamily: "GillSans-SemiBold",
+                    fontFamily: "Verdana-BoldItalic",
                     fontSize: 18,
                     alignSelf: "center",
                   }}
@@ -230,7 +230,8 @@ class Loginscreen extends Component {
                   <Text
                     style={{
                       paddingTop: 8,
-                      color: "white",
+                      color: "red",
+                      textDecorationLine: 'underline',
                       fontFamily: "GillSans-SemiBold",
                       fontSize: 18,
                       alignSelf: "center",
@@ -253,12 +254,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    backgroundColor: "#6CC6E1",
+    backgroundColor: "white",
   },
   inner: {
     flex: 1,
     top: "21%",
-    backgroundColor: "#6CC6E1",
+    backgroundColor: "white",
   },
   header: {
     fontSize: 36,
@@ -276,7 +277,7 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     //opacity: 0.3,
 
-    borderColor: "#6CC6E1",
+    borderColor: "red",
     color: "#6CC6E1",
     fontFamily: "GillSans-SemiBold",
     fontSize: 18,
@@ -286,7 +287,7 @@ const styles = StyleSheet.create({
     marginTop: 12,
   },
   button: {
-    backgroundColor: "lightgray",
+    backgroundColor: "black",
     borderRadius: 7,
     height: 45,
     width: 300,
@@ -302,10 +303,11 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.35,
   },
   textcolor: {
-    color: "white",
-    fontFamily: "GillSans-UltraBold",
+    color: "black",
+    fontFamily: "Verdana-BoldItalic",
     fontSize: 50,
     alignSelf: "center",
+    textShadowColor: 'rgba(255, 0, 0, 1)',
     paddingBottom: 20,
   },
   img: {
