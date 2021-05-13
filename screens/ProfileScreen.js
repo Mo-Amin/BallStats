@@ -1,7 +1,7 @@
 import { createDrawerNavigator } from "react-navigation-drawer";
 import MainProfile from "./Profile";
 
-import CustomDrawerContentComponent from "./screens/DrawerContent";
+import CustomDrawerContentComponent from "./DrawerContent";
 
 export default createDrawerNavigator(
   {
