@@ -1,3 +1,4 @@
+/*
 import { StatusBar } from "expo-status-bar";
 import React, { Component } from "react";
 import { StyleSheet, Text, View } from "react-native";
@@ -9,7 +10,7 @@ import LoadingScreen from "./screens/LoadingScreen";
 import Account from "./screens/AccountScreen";
 import { createStackNavigator } from "react-navigation-stack";
 import { createAppContainer, createSwitchNavigator } from "react-navigation";
-/*
+
 const firebaseConfig = {
   apiKey: "AIzaSyDFKc39gdwI90nYljnVo_nWuz4Xi9gZ3yo",
   authDomain: "ballstats-d37a2.firebaseapp.com",
@@ -23,7 +24,7 @@ const firebaseConfig = {
 if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
 }
-*/
+
 const AppStack = createStackNavigator({
   Profile: {
     navigationOptions: {
@@ -53,6 +54,7 @@ const AuthStack = createStackNavigator({
       borderColor: "white",
       headerStyle: { shadowColor: "transparent" },
       */
+     /*
     },
   },
   Account: {
@@ -75,14 +77,13 @@ export default createAppContainer(
     }
   )
 );
+*/
 
-
-
-/*
 import { StatusBar } from 'expo-status-bar';
 import React, { Component } from 'react';
 import { StyleSheet, Text, View,Image,Button,Animated } from 'react-native';
 import GLOBAL from "./Global";
+//import firebase from "firebase";
 var money = 0;
 //export default function App() {
 export default class App extends Component{
@@ -122,4 +123,4 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
-*/
+
