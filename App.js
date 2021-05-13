@@ -1,7 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import React, { Component } from "react";
 import { StyleSheet, Text, View } from "react-native";
-import * as firebase from "firebase";
+//import * as firebase from "firebase";
 import Splash from "./screens/SplashScreen";
 import Login from "./screens/Login";
 import Profile from "./screens/ProfileScreen";
@@ -9,7 +9,7 @@ import LoadingScreen from "./screens/LoadingScreen";
 import Account from "./screens/AccountScreen";
 import { createStackNavigator } from "react-navigation-stack";
 import { createAppContainer, createSwitchNavigator } from "react-navigation";
-
+/*
 const firebaseConfig = {
   apiKey: "AIzaSyDFKc39gdwI90nYljnVo_nWuz4Xi9gZ3yo",
   authDomain: "ballstats-d37a2.firebaseapp.com",
@@ -23,7 +23,7 @@ const firebaseConfig = {
 if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
 }
-
+*/
 const AppStack = createStackNavigator({
   Profile: {
     navigationOptions: {
