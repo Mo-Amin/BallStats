@@ -1,3 +1,84 @@
+import { StatusBar } from "expo-status-bar";
+import React, { Component } from "react";
+import { StyleSheet, Text, View } from "react-native";
+import * as firebase from "firebase";
+import Splash from "./screens/SplashScreen";
+import Login from "./screens/Login";
+import Profile from "./screens/ProfileScreen";
+import LoadingScreen from "./screens/LoadingScreen";
+import Account from "./screens/AccountScreen";
+import { createStackNavigator } from "react-navigation-stack";
+import { createAppContainer, createSwitchNavigator } from "react-navigation";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDFKc39gdwI90nYljnVo_nWuz4Xi9gZ3yo",
+  authDomain: "ballstats-d37a2.firebaseapp.com",
+  databaseURL: "https://ballstats-d37a2-default-rtdb.firebaseio.com",
+  projectId: "ballstats-d37a2",
+  storageBucket: "ballstats-d37a2.appspot.com",
+  messagingSenderId: "837272527093",
+  appId: "1:837272527093:web:2b14402346cf5e9e62e5bc",
+  measurementId: "G-TW4CJFR32Y"
+};
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+}
+
+const AppStack = createStackNavigator({
+  Profile: {
+    navigationOptions: {
+      headerShown: false,
+    },
+    screen: Profile,
+  },
+});
+
+const AuthStack = createStackNavigator({
+  Splash: {
+    screen: Splash,
+    navigationOptions: {
+      headerShown: false,
+    },
+  },
+
+  Login: {
+    screen: Login,
+    navigationOptions: {
+      headerShown: false,
+      gestureEnabled: false,
+      /*
+      title: "",
+      headerTintColor: "red",
+      headerBackTitle: " ",
+      borderColor: "white",
+      headerStyle: { shadowColor: "transparent" },
+      */
+    },
+  },
+  Account: {
+    screen: Account,
+    navigationOptions: {
+      headerShown: false,
+      gestureEnabled: false,
+    },
+  },
+});
+export default createAppContainer(
+  createSwitchNavigator(
+    {
+      Loading: LoadingScreen,
+      App: AppStack,
+      Auth: AuthStack,
+    },
+    {
+      initialRouteName: "Loading",
+    }
+  )
+);
+
+
+
+/*
 import { StatusBar } from 'expo-status-bar';
 import React, { Component } from 'react';
 import { StyleSheet, Text, View,Image,Button,Animated } from 'react-native';
@@ -41,3 +122,4 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+*/
