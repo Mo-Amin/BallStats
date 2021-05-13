@@ -24,7 +24,7 @@ import GLOBAL from "../Global";
 import * as Google from "expo-google-app-auth";
 
 const IOS_CLIENT_ID =
-  "837272527093-nibum0nbcp9k9n7bnaf0f5egcsrqd7fb.apps.googleusercontent.com";
+  "837272527093-ar4ce3vl2idseqik7732h25rae142htr.apps.googleusercontent.com";
 class Loginscreen extends Component {
   state = {
     email: "",
