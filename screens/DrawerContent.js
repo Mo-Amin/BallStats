@@ -75,6 +75,34 @@ export default class CustomDrawerContentComponent extends Component {
               </TouchableHighlight>
             </View>
 
+            <View style={{ width: "100%", top: "30%" }}>
+              <TouchableHighlight
+                underlayColor={"lightgray"}
+                activeOpacity={0.8}
+                style={{ height: 30 }}
+                onPress={this.navigateToScreen("Count")}
+              >
+                <View style={{ flexDirection: "row" }}>
+                  <Icon
+                    name={"home"}
+                    size={25}
+                    color="white"
+                    style={{ marginRight: 30 }}
+                  />
+                  <Text
+                    style={{
+                      fontFamily: "Gill Sans",
+                      alignSelf: "center",
+                      fontSize: 20,
+                      color: "white",
+                    }}
+                  >
+                    About
+                  </Text>
+                </View>
+              </TouchableHighlight>
+            </View>
+
             <View
               style={{
                 paddingTop: 5,

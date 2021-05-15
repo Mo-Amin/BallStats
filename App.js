@@ -8,6 +8,7 @@ import Login from "./screens/Login";
 import Profile from "./screens/ProfileScreen";
 import LoadingScreen from "./screens/LoadingScreen";
 import Account from "./screens/AccountScreen";
+import Count from "./screens/Count"
 import { createStackNavigator } from "react-navigation-stack";
 import { createAppContainer, createSwitchNavigator } from "react-navigation";
 
@@ -63,6 +64,15 @@ const AuthStack = createStackNavigator({
       headerShown: true,
       gestureEnabled: false,
     },
+  },
+
+  Count: {
+    screen: Count,
+    navigationOptions: {
+      headerShown: false,
+      gestureEnabled: false,
+    },
+
   },
 });
 export default createAppContainer(
