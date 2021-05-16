@@ -13,33 +13,51 @@ import {
   StatusBar,
 } from "react-native";
 import * as firebase from "firebase";
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
 export default class Count extends Component {
   state = {
     bucket:0,
     email: "",
     Password: "",
-    name: "",
-    Full_Name: "",
+    name: null,
+    jersey_number: null,
     phonenumber: "",
     Points: "",
     
   };
-  temp = () => {
-
+  temp(){
+    if(this.state.jersey_number != null)
+    {
         firebase
           .database()
-          .ref("users/"+this.state.name)
+          .ref("users/"+ this.state.jersey_number)
           .set({
-            Points: 0,
+            name: "",
+            Points: this.state.bucket,
+            Asts:0,
+            Rebs:0,
           });
+          /*
+           firebase
+          .database()
+          .ref("users/"+ this.state.name)
+          .update({
+            Points: this.state.bucket,
+            Asts:0,
+            Rebs:0,
+          });
+          */
+    }
       
   
   };
   render(){
   return (
     
-    <View style={styles.container}>
+    <KeyboardAwareScrollView style={{ backgroundColor: "white" }}
+    contentContainerStyle={styles.container}
+    scrollEnabled={true} >
       <Text style={{fontFamily: "GillSans-UltraBold", fontSize:50, bottom:'10%',alignItems:'center', justifyContent:"center",textShadowColor: 'rgba(255, 0, 0, 1)',
     textShadowOffset: {width: -1, height: 1},
     textShadowRadius: 15}}>Ball Stats</Text>
@@ -57,11 +75,13 @@ export default class Count extends Component {
       />
       <TextInput
               style={styles.username_input}
-              placeholder="name"
+              placeholder="Jersey #"
               placeholderTextColor="gray"
+              keyboardType={"phone-pad"}
               //onChangeText={(name) => this.temp(name)}
-              onChangeText={(name) => this.setState({ name })}
-              value={this.state.name}
+              onChangeText={(jersey_number) => this.setState({ jersey_number })}
+              value={this.state.jersey_number}
+              maxLength={2}
             />
       <Text>{this.state.bucket}</Text>
 
@@ -70,10 +90,10 @@ export default class Count extends Component {
                 // Some properties given to Button
                 title="log"
                 //onPress={() => console.log(GLOBAL.mo+=1)}
-                onPress={() => this.temp}
+                onPress={() => this.temp()}
       />
     
-    </View>
+    </KeyboardAwareScrollView>
   );
   }
 }
