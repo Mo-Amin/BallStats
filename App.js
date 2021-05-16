@@ -35,13 +35,14 @@ const AppStack = createStackNavigator({
 });
 
 const AuthStack = createStackNavigator({
-  Splash: {
-    screen: Splash,
+  Count: {
+    screen: Count,
     navigationOptions: {
       headerShown: false,
+      gestureEnabled: false,
     },
-  },
 
+  },
   Login: {
     screen: Login,
     navigationOptions: {
@@ -66,14 +67,7 @@ const AuthStack = createStackNavigator({
     },
   },
 
-  Count: {
-    screen: Count,
-    navigationOptions: {
-      headerShown: false,
-      gestureEnabled: false,
-    },
-
-  },
+  
 });
 
 export default createAppContainer(

@@ -8,10 +8,7 @@ import CustomDrawerContentComponent from "./DrawerContent";
 export default createDrawerNavigator(
   {
     MainProfile: { screen: MainProfile },
-  },
-
-  {
-    Count: {screen: Count},
+    Count:{screen:Count},
   },
 
   {
