@@ -13,6 +13,7 @@ import {
 } from "react-native";
 
 export default class HomeScreen extends Component {
+  /*
   componentDidMount() {
     // Start counting when the page is loaded
     setTimeout(() => {
@@ -20,6 +21,7 @@ export default class HomeScreen extends Component {
       this.props.navigation.navigate("Login");
     }, 800);
   }
+  */
 
   render() {
     return (

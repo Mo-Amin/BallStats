@@ -1,4 +1,3 @@
-
 import { StatusBar } from "expo-status-bar";
 import React, { Component } from "react";
 import { StyleSheet, Text, View } from "react-native";
@@ -8,7 +7,7 @@ import Login from "./screens/Login";
 import Profile from "./screens/ProfileScreen";
 import LoadingScreen from "./screens/LoadingScreen";
 import Account from "./screens/AccountScreen";
-import Count from "./screens/Count"
+import Count from "./screens/Count";
 import { createStackNavigator } from "react-navigation-stack";
 import { createAppContainer, createSwitchNavigator } from "react-navigation";
 
@@ -48,6 +47,7 @@ const AuthStack = createStackNavigator({
     navigationOptions: {
       headerShown: false,
       gestureEnabled: false,
+    
       /*
       title: "",
       headerTintColor: "red",
@@ -75,6 +75,7 @@ const AuthStack = createStackNavigator({
 
   },
 });
+
 export default createAppContainer(
   createSwitchNavigator(
     {
@@ -88,12 +89,15 @@ export default createAppContainer(
   )
 );
 
+
 /*
 import { StatusBar } from 'expo-status-bar';
 import React, { Component } from 'react';
-import { StyleSheet, Text, View,Image,Button,Animated } from 'react-native';
+import { StyleSheet, Text, View,Image,Button,TouchableOpacity } from 'react-native';
 import GLOBAL from "./Global";
 import * as firebase from "firebase";
+import Count from "./screens/Count"
+
 var money = 0;
 //export default function App() {
 export default class App extends Component{
@@ -120,6 +124,7 @@ export default class App extends Component{
                 onPress={() => this.setState({bucket: this.state.bucket+1})}
       />
       <Text>{this.state.bucket}</Text>
+
     
     </View>
   );

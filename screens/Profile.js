@@ -238,6 +238,30 @@ export default class Profile extends Component {
 
   render() {
     return (
+      <View style={styles.container}>
+        <Text>hi</Text>
+
+        <TouchableOpacity
+                  onPress={() => this.props.navigation.navigate("Count")}
+                  style={{ width: 80, height: 50 }}
+                >
+                  <Text
+                    style={{
+                      paddingTop: 8,
+                      color: "red",
+                      textDecorationLine: 'underline',
+                      fontFamily: "GillSans-SemiBold",
+                      fontSize: 18,
+                      alignSelf: "center",
+                      margin: 6,
+                    }}
+                  >
+                    Sign Up
+                  </Text>
+                </TouchableOpacity>
+        
+      </View>
+      /*
       <Container style={{ flex: 1 }}>
         <Header
           style={{
@@ -316,6 +340,7 @@ export default class Profile extends Component {
           Descriptions:
         </Text>
       </Container>
+      */
       /*
       <ImageBackground
         source={require("../assets/ProfileBackground.jpeg")}
@@ -364,7 +389,7 @@ export default class Profile extends Component {
     );
   }
 }
-
+/*
 const styles = StyleSheet.create({
   backgroundimage: {
     flex: 1,
@@ -394,6 +419,15 @@ const styles = StyleSheet.create({
 
     //alignSelf: "center",
     justifyContent: "center",
+  },
+});
+*/
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
 
