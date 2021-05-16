@@ -80,7 +80,7 @@ export default class CustomDrawerContentComponent extends Component {
                 underlayColor={"lightgray"}
                 activeOpacity={0.8}
                 style={{ height: 30 }}
-                onPress={this.navigateToScreen("Count")}
+                onPress={this.props.navigation.navigate("Count")}
               >
                 <View style={{ flexDirection: "row" }}>
                   <Icon
