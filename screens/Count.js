@@ -14,6 +14,7 @@ import {
 } from "react-native";
 import * as firebase from "firebase";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
+import GLOBAL from "../Global";
 
 export default class Count extends Component {
   state = {
@@ -24,6 +25,7 @@ export default class Count extends Component {
     jersey_number: null,
     phonenumber: "",
     Points: "",
+    bro:null,
     
   };
   temp(){
@@ -52,6 +54,19 @@ export default class Count extends Component {
       
   
   };
+  componentDidMount(){
+    
+    const userpic = firebase.database().ref("users/")
+    userpic.once("value", function(snapshot){
+
+      //console.log(Object.keys(snapshot.val()))
+
+
+      GLOBAL.prac = Object.keys(snapshot.val())
+      
+      });
+      console.log(GLOBAL.prac[0])
+  }
   render(){
   return (
     
