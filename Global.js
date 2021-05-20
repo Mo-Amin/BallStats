@@ -10,5 +10,4 @@ module.exports = {
   CreateAccount: false,
 
   prac: [],
-  pracc:null,
 };

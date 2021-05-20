@@ -31,6 +31,7 @@ export default class Count extends Component {
   temp(){
     if(this.state.jersey_number != null)
     {
+      
         firebase
           .database()
           .ref("users/"+ this.state.jersey_number)
@@ -40,19 +41,45 @@ export default class Count extends Component {
             Asts:0,
             Rebs:0,
           });
+          
           /*
-           firebase
+          firebase
           .database()
-          .ref("users/"+ this.state.name)
+          .ref("users/"+ this.state.jersey_number)
           .update({
             Points: this.state.bucket,
-            Asts:0,
-            Rebs:0,
+           
           });
           */
+          
     }
       
   
+  };
+  update(x){
+    if(x != null)
+    {
+      const user = firebase.database().ref("/users/" + x + "/Points/");
+      //READ DATA within DATABASE
+
+      user.once("value", (datasnap) => {
+        this.setState({
+          bucket: datasnap.val()+1,
+        });
+        //GLOBAL.profilepic = datasnap.val();
+      });
+      
+
+      //this.setState({bucket:num+1})
+      firebase
+        .database()
+        .ref("users/"+x)
+        .update({
+          Points: this.state.bucket,
+           
+        });
+    }
+ 
   };
   componentDidMount(){
     
@@ -60,13 +87,15 @@ export default class Count extends Component {
     userpic.once("value", function(snapshot){
 
       //console.log(Object.keys(snapshot.val()))
-
-
-      GLOBAL.prac = Object.values(snapshot.val())
+      GLOBAL.prac = Object.keys(snapshot.val()).map(Number)
       
       });
-      console.log(Object.values(GLOBAL.prac[0]))
-      console.log(GLOBAL.prac.length)
+      console.log(GLOBAL.prac)
+      //GLOBAL.array_prac = Object.values(GLOBAL.prac[0][1])
+      //console.log(GLOBAL.array_prac[3])
+     
+      //console.log(GLOBAL.prac);
+      //console.log(GLOBAL.prac.length)
   }
   render(){
   return (
@@ -74,13 +103,25 @@ export default class Count extends Component {
     <KeyboardAwareScrollView style={{ backgroundColor: "white" }}
     contentContainerStyle={styles.container}
     scrollEnabled={true} >
-      <Text style={{fontFamily: "GillSans-UltraBold", fontSize:50, bottom:'10%',alignItems:'center', justifyContent:"center",textShadowColor: 'rgba(255, 0, 0, 1)',
-    textShadowOffset: {width: -1, height: 1},
-    textShadowRadius: 15}}>Ball Stats</Text>
-
-        <Image style={{width:200, height:200}}source={require("../assets/ball.png")} />
-
-      <StatusBar style="auto" />
+      <TouchableOpacity
+                  onPress={() => this.update(GLOBAL.prac[2])}
+                  style={{ width: 80, height: 50 }}
+                >
+                  <Text
+                    style={{
+                      paddingTop: 8,
+                      color: "red",
+                      textDecorationLine: 'underline',
+                      fontFamily: "GillSans-SemiBold",
+                      fontSize: 18,
+                      alignSelf: "center",
+                      margin: 6,
+                    }}
+                  >
+                    {GLOBAL.prac[1]}
+                  </Text>
+                </TouchableOpacity>
+      
 
       <Button
   
@@ -108,6 +149,10 @@ export default class Count extends Component {
                 //onPress={() => console.log(GLOBAL.mo+=1)}
                 onPress={() => this.temp()}
       />
+
+      
+      
+      
     
     </KeyboardAwareScrollView>
   );
