@@ -62,10 +62,11 @@ export default class Count extends Component {
       //console.log(Object.keys(snapshot.val()))
 
 
-      GLOBAL.prac = Object.keys(snapshot.val())
+      GLOBAL.prac = Object.values(snapshot.val())
       
       });
-      console.log(GLOBAL.prac[0])
+      console.log(Object.values(GLOBAL.prac[0]))
+      console.log(GLOBAL.prac.length)
   }
   render(){
   return (
