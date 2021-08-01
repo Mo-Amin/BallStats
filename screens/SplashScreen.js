@@ -11,27 +11,54 @@ import {
   TouchableOpacity,
   Alert,
 } from "react-native";
-
+import * as firebase from "firebase";
+import GLOBAL from "../Global";
 export default class HomeScreen extends Component {
-  /*
+  state = {
+    num: 0,
+    name:"",
+  };
+  
   componentDidMount() {
+
+    this.setState({num:this.props.navigation.getParam('num'), name:this.props.navigation.getParam('name')})
+    const userpic = firebase.database().ref("users/")
+    userpic.once("value", function(snapshot){
+
+      //console.log(Object.keys(snapshot.val()))
+      GLOBAL.prac = Object.keys(snapshot.val()).map(Number)
+      
+      });
+      console.log(GLOBAL.prac.length)
+
+      
+      
     // Start counting when the page is loaded
     setTimeout(() => {
       // Add your logic for the transition
-      this.props.navigation.navigate("Login");
-    }, 800);
+      this.props.navigation.goBack();
+    }, 2500);
+
   }
-  */
+  componentWillUnmount(){
+    GLOBAL.names[this.state.num % 100] = this.state.name;
+  }
+  
 
   render() {
     return (
       <View style={styles.container}>
-      <Text style={{fontFamily: "GillSans-UltraBold", fontSize:50, bottom:'10%',alignItems:'center', justifyContent:"center",textShadowColor: 'rgba(255,255,255, 1.2)',
+      
+      <View>
+        <Text style={{fontFamily: "Futura-CondensedExtraBold",fontSize:80, bottom:'10%',alignItems:'center', justifyContent:"center",textShadowColor: 'rgba(255,0,0,0.8)',
     textShadowOffset: {width: -1, height: 1},
-    textShadowRadius: 15}}>Ball Stats</Text>
+    textShadowRadius: 15}}>{this.state.name} #{this.state.num} {"\n"}has been REGISTERED</Text>
+    </View>  
 
-      <Image style={{width:200, height:200}}source={require("../assets/ball.png")} />
-    
+
+    <View>
+        <Image style={{width:200, height:200}}source={require("../assets/ball.png")} />
+      </View>  
     </View>
   );
 }
@@ -39,37 +66,8 @@ export default class HomeScreen extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "red",
+    backgroundColor: "white",
     alignItems: 'center',
     justifyContent: 'center',
   },
 });
-
-      /*
-      <View style={styles.container}>
-        <Image style={styles.img} source={require("../assets/ball.png")} />
-      </View>
-    );
-  }
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#6CC6E1",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-
-  img: {
-    width: 300,
-    height: 300,
-    bottom: "7.5%",
-    left: "12%",
-
-    //position: "absolute",
-
-    alignSelf: "center",
-  },
-});
-*/

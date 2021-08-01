@@ -3,13 +3,26 @@ import React, { Component } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import * as firebase from "firebase";
 import Splash from "./screens/SplashScreen";
+import StatTracker from "./screens/StatTracker";
 import Login from "./screens/Login";
-import Profile from "./screens/ProfileScreen";
+import Players from "./screens/Players";
 import LoadingScreen from "./screens/LoadingScreen";
 import Account from "./screens/AccountScreen";
+
+import PlayerStats from "./screens/PlayerStats"
+import OriginalSplash from "./screens/OriginalSplash"
 import Count from "./screens/Count";
 import { createStackNavigator } from "react-navigation-stack";
 import { createAppContainer, createSwitchNavigator } from "react-navigation";
+import { Button, Title } from "native-base";
+import Boxscore from "./screens/Boxscore";
+import DeletePlayer from "./screens/DeletePlayer";
+
+import MainScreen from "./screens/MainScreen";
+import Subtraction from "./screens/Subtraction";
+import ChangePlayerNum from "./screens/ChangePlayerNum";
+
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyDFKc39gdwI90nYljnVo_nWuz4Xi9gZ3yo",
@@ -26,28 +39,16 @@ if (!firebase.apps.length) {
 }
 
 const AppStack = createStackNavigator({
-  Profile: {
-    navigationOptions: {
-      headerShown: false,
-    },
-    screen: Profile,
-  },
-});
 
-const AuthStack = createStackNavigator({
-  Count: {
-    screen: Count,
-    navigationOptions: {
-      headerShown: false,
-      gestureEnabled: false,
-    },
-
-  },
+  
   Login: {
     screen: Login,
     navigationOptions: {
-      headerShown: false,
-      gestureEnabled: false,
+      headerShown: true,
+      gestureEnabled:true,
+
+
+
     
       /*
       title: "",
@@ -59,6 +60,170 @@ const AuthStack = createStackNavigator({
      
     },
   },
+
+  Splash: {
+    screen: Splash,
+    navigationOptions: {
+      headerShown: false,
+      gestureEnabled: false,
+    },
+
+  },
+  DeletePlayer:{
+    screen: DeletePlayer,
+    navigationOptions: {
+      headerShown: false,
+      gestureEnabled: false,
+    },
+
+  },
+  ChangePlayerNum:{
+    screen: ChangePlayerNum,
+    navigationOptions: {
+      headerShown: false,
+      gestureEnabled: false,
+    },
+
+  },
+
+  OriginalSplash: {
+    screen: OriginalSplash,
+    navigationOptions: {
+      headerShown: false,
+      gestureEnabled: false,
+    },
+
+  },
+
+  Count: {
+    screen: Count,
+    navigationOptions: {
+      headerShown: false,
+      gestureEnabled: false,
+    },
+
+  },
+
+
+
+  Boxscore: {
+    screen: Boxscore,
+    navigationOptions: {
+      headerShown: true,
+      gestureEnabled: true,
+    },
+  },
+
+  Players: {
+    screen: Players,
+    navigationOptions: {
+      headerShown: false,
+      gestureEnabled: false,
+    },
+  },
+
+  Subtraction: {
+    screen: Subtraction,
+    navigationOptions: {
+      headerShown: true,
+    },
+  },
+
+  PlayerStats: {
+    screen: PlayerStats,
+    navigationOptions: {
+      headerShown: true,
+    },
+
+  },
+
+
+  StatTracker: {
+    screen: StatTracker,
+    navigationOptions: {
+      headerShown: true,
+    },
+    
+  },
+});
+
+const AuthStack = createStackNavigator({
+  MainScreen: {
+    screen: MainScreen,
+    navigationOptions: {
+      headerShown: false,
+      gestureEnabled: false,
+    },
+
+  },
+
+  Login: {
+    screen: Login,
+    navigationOptions: {
+      headerShown: true,
+    
+      /*
+      title: "",
+      headerTintColor: "red",
+      headerBackTitle: " ",
+      borderColor: "white",
+      headerStyle: { shadowColor: "transparent" },
+      */
+     
+    },
+  },
+  Count: {
+    screen: Count,
+    navigationOptions: {
+      headerShown: false,
+      gestureEnabled: false,
+    },
+
+  },
+
+  DeletePlayer:{
+    screen: DeletePlayer,
+    navigationOptions: {
+      headerShown: false,
+      gestureEnabled: false,
+    },
+
+  },
+  ChangePlayerNum:{
+    screen: ChangePlayerNum,
+    navigationOptions: {
+      headerShown: false,
+      gestureEnabled: false,
+    },
+
+  },
+
+  Subtraction: {
+    screen: Subtraction,
+    navigationOptions: {
+      headerShown: true,
+    },
+  },
+ 
+  
+  Players: {
+    screen: Players,
+    navigationOptions: {
+      headerShown: false,
+      
+    },
+    
+  },
+
+  PlayerStats: {
+    screen: PlayerStats,
+    navigationOptions: {
+      headerShown: true,
+    },
+
+  },
+  
+ 
   Account: {
     screen: Account,
     navigationOptions: {

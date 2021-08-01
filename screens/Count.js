@@ -40,6 +40,7 @@ export default class Count extends Component {
             Points: this.state.bucket,
             Asts:0,
             Rebs:0,
+            fouls:0,
           });
           
           /*
@@ -90,13 +91,14 @@ export default class Count extends Component {
       GLOBAL.prac = Object.keys(snapshot.val()).map(Number)
       
       });
-      console.log(GLOBAL.prac)
+      console.log(GLOBAL.prac.length)
       //GLOBAL.array_prac = Object.values(GLOBAL.prac[0][1])
       //console.log(GLOBAL.array_prac[3])
      
       //console.log(GLOBAL.prac);
       //console.log(GLOBAL.prac.length)
   }
+ 
   render(){
   return (
     
@@ -104,7 +106,7 @@ export default class Count extends Component {
     contentContainerStyle={styles.container}
     scrollEnabled={true} >
       <TouchableOpacity
-                  onPress={() => this.update(GLOBAL.prac[2])}
+                  onPress={() => this.update(GLOBAL.prac[0])}
                   style={{ width: 80, height: 50 }}
                 >
                   <Text
@@ -118,7 +120,7 @@ export default class Count extends Component {
                       margin: 6,
                     }}
                   >
-                    {GLOBAL.prac[1]}
+                    {GLOBAL.prac[0]}
                   </Text>
                 </TouchableOpacity>
       
@@ -142,6 +144,8 @@ export default class Count extends Component {
             />
       <Text>{this.state.bucket}</Text>
 
+      <Text>{GLOBAL.prac.length}</Text>
+
       <Button
   
                 // Some properties given to Button
@@ -149,6 +153,13 @@ export default class Count extends Component {
                 //onPress={() => console.log(GLOBAL.mo+=1)}
                 onPress={() => this.temp()}
       />
+
+      <TouchableOpacity
+        onPress={() => this.props.navigation.navigate("Players")}
+      >
+        <Text>HI</Text>
+        
+      </TouchableOpacity>
 
       
       
